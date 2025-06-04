@@ -63,7 +63,7 @@ function App() {
     <div className="app">
       {/* ヘッダー部分：タイトルと操作ボタン */}
       <header className="app-header">
-        <h1>Calculator</h1>
+        <h1>電卓</h1>
         <div className="controls">
           {/* モード切り替えボタン */}
           <ModeToggle mode={mode} onToggle={toggleMode} />
