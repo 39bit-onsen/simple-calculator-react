@@ -14,7 +14,7 @@ import './App.css';
  * テーマ（ダーク/ライト）とモード（基本/関数電卓）の状態を管理
  */
 function App() {
-  // テーマの状態管理（'dark' または 'light'）
+  // テーマの状態管理（'dark', 'light', 'casio'）
   const [theme, setTheme] = useState('dark');
   // 電卓モードの状態管理（'basic' または 'scientific'）
   const [mode, setMode] = useState('basic');
@@ -45,10 +45,16 @@ function App() {
 
   /**
    * テーマを切り替える関数
-   * ダーク ⇔ ライト を切り替え
+   * ダーク → ライト → カシオ → ダーク の順で切り替え
    */
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    if (theme === 'dark') {
+      setTheme('light');
+    } else if (theme === 'light') {
+      setTheme('casio');
+    } else {
+      setTheme('dark');
+    }
   };
 
   /**

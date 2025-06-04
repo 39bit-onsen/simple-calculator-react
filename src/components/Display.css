@@ -25,6 +25,31 @@
   border-color: var(--accent);
 }
 
+/* カシオfx-17風液晶ディスプレイスタイル */
+[data-theme="casio"] .display-input {
+  background-color: var(--display-bg);
+  color: var(--display-text);
+  border: 3px solid var(--display-border);
+  border-radius: 2px;
+  font-family: 'Courier New', 'Liberation Mono', monospace;
+  font-weight: bold;
+  text-shadow: none;
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  background-image: 
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.05) 50%, transparent 100%),
+    linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+}
+
+[data-theme="casio"] .display-input:focus {
+  border-color: var(--display-border);
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 0 0 2px var(--accent);
+}
+
 /* タブレット対応 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .display {

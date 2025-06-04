@@ -5,18 +5,34 @@ import './ThemeToggle.css';
 
 /**
  * テーマ切り替えボタンコンポーネント
- * ダークモードとライトモードを切り替える
- * @param {string} theme - 現在のテーマ（'dark' または 'light'）
+ * ダーク、ライト、カシオテーマを切り替える
+ * @param {string} theme - 現在のテーマ（'dark', 'light', 'casio'）
  * @param {function} onToggle - テーマ切り替え時のコールバック関数
  */
 const ThemeToggle = ({ theme, onToggle }) => {
+  // テーマに応じたアイコンと次のテーマ名を取得
+  const getThemeDisplay = () => {
+    switch (theme) {
+      case 'dark':
+        return { icon: '☀️', next: 'ライト' };
+      case 'light':
+        return { icon: '🧮', next: 'カシオ' };
+      case 'casio':
+        return { icon: '🌙', next: 'ダーク' };
+      default:
+        return { icon: '☀️', next: 'ライト' };
+    }
+  };
+
+  const display = getThemeDisplay();
+
   return (
     <button className="theme-toggle" onClick={onToggle}>
       {/* 現在のテーマに応じてアイコンを表示 */}
-      {theme === 'dark' ? '☀️' : '🌙'}
+      {display.icon}
       <span className="toggle-text">
         {/* 次に切り替わるテーマ名を表示 */}
-        {theme === 'dark' ? 'ライト' : 'ダーク'}
+        {display.next}
       </span>
     </button>
   );

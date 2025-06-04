@@ -44,6 +44,48 @@
   --button-scientific-hover: #7b1fa2;
 }
 
+[data-theme="casio"] {
+  /* カシオfx-17風のカラーパレット */
+  --bg-primary: #d4d4d4;
+  --bg-secondary: #c0c0c0;
+  --bg-tertiary: #a8a8a8;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --accent: #ff6600;
+  --accent-hover: #e55a00;
+  --border: #999999;
+  
+  /* 液晶ディスプレイ風の色 */
+  --display-bg: #9fb891;
+  --display-text: #000000;
+  --display-border: #7a9668;
+  
+  /* ボタンの色設定 */
+  --button-bg: #e8e8e8;
+  --button-hover: #d0d0d0;
+  --button-text: #000000;
+  
+  /* 数字ボタン */
+  --button-number: #f0f0f0;
+  --button-number-hover: #e0e0e0;
+  
+  /* 基本演算ボタン（オレンジ系） */
+  --button-operation: #ff8800;
+  --button-operation-hover: #e67700;
+  
+  /* イコールボタン（オレンジ系） */
+  --button-equals: #ff6600;
+  --button-equals-hover: #e55a00;
+  
+  /* クリアボタン（赤系） */
+  --button-clear: #cc4400;
+  --button-clear-hover: #b33300;
+  
+  /* 関数ボタン（黄色系） */
+  --button-scientific: #ffcc00;
+  --button-scientific-hover: #e6b800;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -56,6 +98,22 @@ body {
   color: var(--text-primary);
   transition: var(--transition);
   min-height: 100vh;
+}
+
+/* カシオテーマ専用フォント */
+[data-theme="casio"] body,
+[data-theme="casio"] * {
+  font-family: 'Courier New', 'Liberation Mono', monospace;
+}
+
+/* カシオテーマでの電卓全体のスタイル */
+[data-theme="casio"] .app {
+  background: linear-gradient(135deg, #d4d4d4, #c0c0c0);
+}
+
+[data-theme="casio"] .app-header h1 {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .app {
