@@ -16,7 +16,7 @@ const ThemeToggle = ({ theme, onToggle }) => {
       {theme === 'dark' ? '☀️' : '🌙'}
       <span className="toggle-text">
         {/* 次に切り替わるテーマ名を表示 */}
-        {theme === 'dark' ? 'Light' : 'Dark'}
+        {theme === 'dark' ? 'ライト' : 'ダーク'}
       </span>
     </button>
   );
