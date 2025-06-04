@@ -1,0 +1,83 @@
+.calc-button {
+  height: 60px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.calc-button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.calc-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.calc-button.number {
+  background-color: var(--button-bg);
+}
+
+.calc-button.operation {
+  background-color: var(--button-operation);
+  color: white;
+}
+
+.calc-button.operation:hover {
+  background-color: var(--button-operation-hover);
+}
+
+.calc-button.equals {
+  background-color: var(--button-equals);
+  color: white;
+}
+
+.calc-button.equals:hover {
+  background-color: var(--button-equals-hover);
+}
+
+.calc-button.clear {
+  background-color: var(--button-clear);
+  color: white;
+}
+
+.calc-button.clear:hover {
+  background-color: var(--button-clear-hover);
+}
+
+.calc-button.scientific {
+  background-color: var(--button-scientific);
+  color: white;
+  font-size: 1rem;
+}
+
+.calc-button.scientific:hover {
+  background-color: var(--button-scientific-hover);
+}
+
+.calc-button.zero {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .calc-button {
+    height: 50px;
+    font-size: 1rem;
+  }
+  
+  .calc-button.scientific {
+    font-size: 0.9rem;
+  }
+}

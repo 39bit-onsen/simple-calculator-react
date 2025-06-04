@@ -1,0 +1,33 @@
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.scientific-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.button-grid.scientific .main-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .button-grid {
+    gap: 12px;
+  }
+  
+  .scientific-row,
+  .main-grid {
+    gap: 6px;
+  }
+}

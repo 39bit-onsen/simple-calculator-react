@@ -1,0 +1,38 @@
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--button-scientific);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.mode-toggle:hover {
+  background-color: var(--button-scientific-hover);
+  transform: translateY(-2px);
+}
+
+.mode-toggle:active {
+  transform: translateY(0);
+}
+
+.toggle-text {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .mode-toggle {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .toggle-text {
+    font-size: 0.75rem;
+  }
+}
