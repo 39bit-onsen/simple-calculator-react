@@ -1,0 +1,103 @@
+.calculator {
+  background-color: var(--bg-secondary);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  max-width: 100%;
+  width: 100%;
+}
+
+/* デスクトップサイズでの幅制限 */
+.calculator.basic {
+  max-width: 380px;
+}
+
+.calculator.scientific {
+  max-width: 520px;
+}
+
+/* カシオfx-17風電卓筐体スタイル */
+[data-theme="casio"] .calculator {
+  background: linear-gradient(145deg, #d8d8d8, #b8b8b8);
+  border: 3px solid #999999;
+  border-radius: 8px;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+
+/* カシオロゴ風の装飾 */
+[data-theme="casio"] .calculator::before {
+  content: "CASIO";
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #333333;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+}
+
+[data-theme="casio"] .calculator::after {
+  content: "fx-17";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: #666666;
+  font-family: 'Arial', sans-serif;
+}
+
+/* タブレット対応 (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calculator {
+    padding: 20px;
+  }
+  
+  .calculator.basic {
+    max-width: 350px;
+  }
+  
+  .calculator.scientific {
+    max-width: 480px;
+  }
+}
+
+/* モバイル対応 (481px - 768px) */
+@media (max-width: 768px) {
+  .calculator {
+    width: 100%;
+    max-width: calc(100vw - 20px);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .calculator.basic,
+  .calculator.scientific {
+    max-width: 100%;
+  }
+}
+
+/* 超小型画面対応 (～480px) */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 12px;
+    border-radius: 8px;
+    max-width: calc(100vw - 10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* 横向きモバイル対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .calculator {
+    max-width: calc(100vh - 40px);
+    padding: 12px;
+  }
+}
