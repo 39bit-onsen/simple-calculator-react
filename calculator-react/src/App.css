@@ -1,0 +1,202 @@
+:root {
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent: #4a9eff;
+  --accent-hover: #3a8eef;
+  --border: #555555;
+  --button-bg: #333333;
+  --button-hover: #444444;
+  --button-operation: #ff6b35;
+  --button-operation-hover: #e55a2b;
+  --button-equals: #4caf50;
+  --button-equals-hover: #45a049;
+  --button-clear: #f44336;
+  --button-clear-hover: #d32f2f;
+  --button-scientific: #9c27b0;
+  --button-scientific-hover: #8e24aa;
+}
+
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e0e0e0;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent: #2196f3;
+  --accent-hover: #1976d2;
+  --border: #cccccc;
+  --button-bg: #f8f8f8;
+  --button-hover: #e8e8e8;
+  --button-operation: #ff9800;
+  --button-operation-hover: #f57c00;
+  --button-equals: #4caf50;
+  --button-equals-hover: #388e3c;
+  --button-clear: #f44336;
+  --button-clear-hover: #d32f2f;
+  --button-scientific: #9c27b0;
+  --button-scientific-hover: #7b1fa2;
+}
+
+[data-theme="casio"] {
+  /* カシオfx-17風のカラーパレット */
+  --bg-primary: #d4d4d4;
+  --bg-secondary: #c0c0c0;
+  --bg-tertiary: #a8a8a8;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --accent: #ff6600;
+  --accent-hover: #e55a00;
+  --border: #999999;
+  
+  /* 液晶ディスプレイ風の色 */
+  --display-bg: #9fb891;
+  --display-text: #000000;
+  --display-border: #7a9668;
+  
+  /* ボタンの色設定 */
+  --button-bg: #e8e8e8;
+  --button-hover: #d0d0d0;
+  --button-text: #000000;
+  
+  /* 数字ボタン */
+  --button-number: #f0f0f0;
+  --button-number-hover: #e0e0e0;
+  
+  /* 基本演算ボタン（オレンジ系） */
+  --button-operation: #ff8800;
+  --button-operation-hover: #e67700;
+  
+  /* イコールボタン（オレンジ系） */
+  --button-equals: #ff6600;
+  --button-equals-hover: #e55a00;
+  
+  /* クリアボタン（赤系） */
+  --button-clear: #cc4400;
+  --button-clear-hover: #b33300;
+  
+  /* 関数ボタン（黄色系） */
+  --button-scientific: #ffcc00;
+  --button-scientific-hover: #e6b800;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition);
+  min-height: 100vh;
+}
+
+/* カシオテーマ専用フォント */
+[data-theme="casio"] body,
+[data-theme="casio"] * {
+  font-family: 'Courier New', 'Liberation Mono', monospace;
+}
+
+/* カシオテーマでの電卓全体のスタイル */
+[data-theme="casio"] .app {
+  background: linear-gradient(135deg, #d4d4d4, #c0c0c0);
+}
+
+[data-theme="casio"] .app-header h1 {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--bg-primary);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+/* レスポンシブデザイン - モバイル対応 */
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+    min-height: 100vh;
+  }
+  
+  .app-header {
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .controls {
+    gap: 8px;
+  }
+}
+
+/* 超小型画面対応 */
+@media (max-width: 480px) {
+  .app {
+    padding: 5px;
+  }
+  
+  .app-header {
+    margin-bottom: 15px;
+  }
+  
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app {
+    padding: 30px;
+  }
+  
+  .app-header {
+    max-width: 700px;
+  }
+}
