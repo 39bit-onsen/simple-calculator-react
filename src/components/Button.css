@@ -71,13 +71,75 @@
   grid-column: span 2;
 }
 
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .calc-button {
+    height: 55px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+  }
+  
+  .calc-button.scientific {
+    font-size: 0.95rem;
+  }
+}
+
+/* モバイル対応 */
 @media (max-width: 768px) {
   .calc-button {
     height: 50px;
     font-size: 1rem;
+    border-radius: 6px;
+    min-height: 48px; /* タッチターゲットサイズ確保 */
   }
   
   .calc-button.scientific {
+    font-size: 0.85rem;
+  }
+  
+  /* ホバー効果をタッチデバイスでは無効化 */
+  .calc-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  /* タッチ時のフィードバック */
+  .calc-button:active {
+    transform: scale(0.95);
+    background-color: var(--button-hover);
+  }
+}
+
+/* 超小型画面対応 */
+@media (max-width: 480px) {
+  .calc-button {
+    height: 45px;
     font-size: 0.9rem;
+    border-radius: 4px;
+    min-height: 44px;
+  }
+  
+  .calc-button.scientific {
+    font-size: 0.75rem;
+  }
+}
+
+/* 横向きモバイル対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .calc-button {
+    height: 40px;
+    font-size: 0.85rem;
+    min-height: 40px;
+  }
+  
+  .calc-button.scientific {
+    font-size: 0.7rem;
+  }
+}
+
+/* 高解像度画面対応 */
+@media (min-resolution: 2dppx) {
+  .calc-button {
+    border-width: 0.5px;
   }
 }

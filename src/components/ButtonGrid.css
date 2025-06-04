@@ -21,6 +21,19 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .button-grid {
+    gap: 14px;
+  }
+  
+  .scientific-row,
+  .main-grid {
+    gap: 7px;
+  }
+}
+
+/* モバイル対応 */
 @media (max-width: 768px) {
   .button-grid {
     gap: 12px;
@@ -29,5 +42,37 @@
   .scientific-row,
   .main-grid {
     gap: 6px;
+  }
+  
+  .scientific-row {
+    margin-bottom: 6px;
+  }
+}
+
+/* 超小型画面対応 */
+@media (max-width: 480px) {
+  .button-grid {
+    gap: 10px;
+  }
+  
+  .scientific-row,
+  .main-grid {
+    gap: 4px;
+  }
+  
+  .scientific-row {
+    margin-bottom: 4px;
+  }
+}
+
+/* 横向きモバイル対応 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .button-grid {
+    gap: 8px;
+  }
+  
+  .scientific-row,
+  .main-grid {
+    gap: 4px;
   }
 }

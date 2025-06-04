@@ -26,13 +26,43 @@
   font-size: 0.85rem;
 }
 
+/* タブレット対応 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .theme-toggle {
+    padding: 7px 14px;
+    font-size: 0.85rem;
+  }
+  
+  .toggle-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* モバイル対応 */
 @media (max-width: 768px) {
   .theme-toggle {
     padding: 6px 12px;
     font-size: 0.8rem;
+    min-height: 44px; /* タッチターゲットサイズ確保 */
+  }
+  
+  .theme-toggle:hover {
+    transform: none; /* モバイルではホバー効果を無効化 */
   }
   
   .toggle-text {
-    display: none;
+    font-size: 0.75rem;
+  }
+}
+
+/* 超小型画面対応 */
+@media (max-width: 480px) {
+  .theme-toggle {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+  
+  .toggle-text {
+    display: none; /* アイコンのみ表示 */
   }
 }

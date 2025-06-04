@@ -14,7 +14,7 @@ const ModeToggle = ({ mode, onToggle }) => {
     <button className="mode-toggle" onClick={onToggle}>
       <span className="toggle-text">
         {/* 次に切り替わるモード名をアイコン付きで表示 */}
-        {mode === 'basic' ? '🔬 Scientific' : '🔢 Basic'}
+        {mode === 'basic' ? '🔬 関数電卓' : '🔢 基本電卓'}
       </span>
     </button>
   );
